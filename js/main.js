@@ -20,6 +20,9 @@ const main = () => {
                         return;
                     }
                     const {summary, temperature} = res.body.currently;
+                    document.getElementById("summaryText").innerText = summary;
+                    document.getElementById("temperatureText").innerText = temperature;
+
                 })
 
         });
