@@ -19,7 +19,7 @@ const main = () => {
                         console.log(err)
                         return;
                     }
-                    console.log(res)
+                    const {summary, temperature} = res.body.currently;
                 })
 
         });
