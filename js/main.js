@@ -20,7 +20,7 @@ const main = () => {
                         return;
                     }
                     console.log(res)
-
+                })
 
         });
 
