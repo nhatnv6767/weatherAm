@@ -7,6 +7,7 @@ const main = () => {
                 console.log(err)
                 return
             }
+            console.log(res)
             const {lat, lng} = res.body.results[0].geometry.location
 
             //dùng superagent call api của darksky, lấy thời tiết của địa chỉ người dùng nhập
