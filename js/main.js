@@ -1,20 +1,25 @@
 const main = () => {
     const address = document.getElementById("txtAddress").value
-    // dung superagent call api cua google, lay toa do cua dia chi nguoi dung
-    superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDBunJ4GXNEC3KJlpoGJO-iB--CjPv4o-s&address=${address}`)
-        .end((err, res) => {
-            if (err) {
-                console.log(err)
-                return
-            }
-            const {lat, lng} = res.body.results[0].geometry.location
 
-
-        });
 
 }
 
-const getWeather = () => {
+const getGeoCode = (address) => {
+    return new Promise((resolve, reject) => {
+        // dung superagent call api cua google, lay toa do cua dia chi nguoi dung
+        superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDBunJ4GXNEC3KJlpoGJO-iB--CjPv4o-s&address=${address}`)
+            .end((err, res) => {
+                if (err) {
+                    reject(err)
+                }
+                const {lat, lng} = res.body.results[0].geometry.location
+                const data = {lat, lng}
+                resolve(data)
+            });
+    })
+}
+
+const getWeather = (lat, lng) => {
     return new Promise((resolve, reject) => {
         //dùng superagent call api của darksky, lấy thời tiết của địa chỉ người dùng nhập
         superagent
