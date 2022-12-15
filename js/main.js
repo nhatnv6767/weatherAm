@@ -3,6 +3,8 @@ const main = () => {
     getGeoCode(address).then((res) => {
         console.log(res)
         return getWeather(res.lat, res.lng)
+    }).then((res) => {
+        console.log(res)
     })
 }
 
