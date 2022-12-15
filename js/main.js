@@ -7,25 +7,31 @@ const main = () => {
                 console.log(err)
                 return
             }
-            console.log(res)
             const {lat, lng} = res.body.results[0].geometry.location
 
-            //dùng superagent call api của darksky, lấy thời tiết của địa chỉ người dùng nhập
-            superagent
-                .get(
-                    `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/7bbecca28cbc31d7c6739e70baa64e46/${lat},${lng}`
-                )
-                .end((err, res) => {
-                    if (err) {
-                        console.log(err)
-                        return;
-                    }
-                    const {summary, temperature} = res.body.currently;
-                    document.getElementById("summaryText").innerText = summary;
-                    document.getElementById("temperatureText").innerText = temperature;
-
-                })
 
         });
 
 }
+
+const getWeather = () => {
+    return new Promise((resolve, reject) => {
+        //dùng superagent call api của darksky, lấy thời tiết của địa chỉ người dùng nhập
+        superagent
+            .get(
+                `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/7bbecca28cbc31d7c6739e70baa64e46/${lat},${lng}`
+            )
+            .end((err, res) => {
+                if (err) {
+                    console.log(err)
+                    return;
+                }
+                const {summary, temperature} = res.body.currently;
+                document.getElementById("summaryText").innerText = summary;
+                document.getElementById("temperatureText").innerText = temperature;
+
+            })
+    })
+}
+
+// promise => pending, resolve, reject
