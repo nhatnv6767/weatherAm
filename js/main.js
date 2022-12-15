@@ -26,7 +26,8 @@ const getWeather = () => {
                     reject(err)
                 }
                 const {summary, temperature} = res.body.currently;
-                const data = {summary, temperature}
+                const data = {summary: summary, temperature: temperature}
+                resolve(data)
 
             })
     })
