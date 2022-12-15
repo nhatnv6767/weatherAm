@@ -23,12 +23,10 @@ const getWeather = () => {
             )
             .end((err, res) => {
                 if (err) {
-                    console.log(err)
-                    return;
+                    reject(err)
                 }
                 const {summary, temperature} = res.body.currently;
-                document.getElementById("summaryText").innerText = summary;
-                document.getElementById("temperatureText").innerText = temperature;
+                const data = {summary, temperature}
 
             })
     })
