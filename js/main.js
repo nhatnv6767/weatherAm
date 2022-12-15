@@ -1,7 +1,8 @@
 const main = () => {
     const address = document.getElementById("txtAddress").value
-
-
+    getGeoCode(address).then((res) => {
+        console.log(res)
+    })
 }
 
 const getGeoCode = (address) => {
