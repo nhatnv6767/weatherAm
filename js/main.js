@@ -3,11 +3,13 @@ const main = () => {
     getGeoCode(address)
         .then((res) => {
             console.log(res)
-            getWeather(res.lat, res.lng)
+            return getWeather(res.lat, res.lng)
         })
-        .then((res) => {
-            console.log(res)
+        // then nay cua getWeather
+        .then((weatherRes) => {
+            console.log(weatherRes)
         })
+    // promise chain
 }
 
 const getGeoCode = (address) => {
