@@ -1,11 +1,13 @@
 const main = () => {
     const address = document.getElementById("txtAddress").value
-    getGeoCode(address).then((res) => {
-        console.log(res)
-        return getWeather(res.lat, res.lng)
-    }).then((res) => {
-        console.log(res)
-    })
+    getGeoCode(address)
+        .then((res) => {
+            console.log(res)
+            getWeather(res.lat, res.lng)
+        })
+        .then((res) => {
+            console.log(res)
+        })
 }
 
 const getGeoCode = (address) => {
