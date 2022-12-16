@@ -8,7 +8,9 @@ const main = () => {
         // then nay cua getWeather
         .then((weatherRes) => {
             console.log(weatherRes)
-        })
+        }).catch((err) => {
+        console.log(err)
+    })
     // promise chain
 }
 
