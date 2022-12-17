@@ -34,7 +34,7 @@ const renderStudents = () => {
             </tr>
         `
     }
-    console.log(htmlContent)
+    // console.log(htmlContent)
     document.getElementById("tableDanhSach").innerHTML = htmlContent
 }
 
@@ -49,6 +49,15 @@ const addStudent = () => {
     const chemistry = document.getElementById("chemistry").value;
 
     const newStudent = new Student(studentId, name, email, phone, idCard, math, physics, chemistry)
+    axios({
+        url: "https://svcy.myclass.vn/api/SinhVien/ThemSinhVien",
+        method: "POST",
+        data: newStudent,
+    }).then((res) => {
+        console.log(res)
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 fetchStudents()
