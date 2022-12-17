@@ -54,7 +54,7 @@ const addStudent = () => {
         method: "POST",
         data: newStudent,
     }).then((res) => {
-        console.log(res)
+        fetchStudents()
     }).catch((err) => {
         console.log(err)
     })
