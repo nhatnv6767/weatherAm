@@ -62,4 +62,15 @@ const addStudent = () => {
     })
 }
 
+const deleteStudent = (id) => {
+    axios({
+        url: `https://svcy.myclass.vn/api/SinhVien/XoaSinhVien/${id}`
+        method: 'DELETE'
+    }).then(()=> {
+        console.log(res)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
 fetchStudents()
