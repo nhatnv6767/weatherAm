@@ -20,7 +20,6 @@ const renderStudents = () => {
     // o trong cap the tr
     let htmlContent = ""
     for (let student of studentList) {
-        console.log(student)
         htmlContent += `
             <tr>
                 <td>${student.MaSV}</td>
@@ -35,6 +34,7 @@ const renderStudents = () => {
             </tr>
         `
     }
+    console.log(htmlContent)
 }
 
 fetchStudents()
