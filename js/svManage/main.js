@@ -67,7 +67,7 @@ const deleteStudent = (id) => {
         url: `https://svcy.myclass.vn/api/SinhVien/XoaSinhVien/${id}`,
         method: 'DELETE'
     }).then(() => {
-        console.log(res)
+        fetchStudents()
     }).catch((err) => {
         console.log(err)
     })
