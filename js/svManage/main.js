@@ -35,6 +35,7 @@ const renderStudents = () => {
         `
     }
     console.log(htmlContent)
+    document.getElementById("tableDanhSach").innerHTML = htmlContent
 }
 
 fetchStudents()
