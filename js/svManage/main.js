@@ -31,6 +31,7 @@ const renderStudents = () => {
                 <td>${student.DiemHoa}</td>
                 <td>
                     <button class="btn btn-danger" onclick="deleteStudent('${student.MaSV}')">Xoá</button>
+                    <button class="btn btn-info" onclick="">Cập nhật</button>
                 </td>
                 
             </tr>
@@ -68,6 +69,17 @@ const deleteStudent = (id) => {
         method: 'DELETE'
     }).then(() => {
         fetchStudents()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+const getStudent = (id) => {
+    axios({
+        url: `https://svcy.myclass.vn/api/SinhVien/LayThongTinSinhVien/${id}`,
+        method: 'GET',
+    }).then((res) => {
+        console.log(res)
     }).catch((err) => {
         console.log(err)
     })
