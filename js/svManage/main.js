@@ -29,7 +29,9 @@ const renderStudents = () => {
                 <td>${student.DiemToan}</td>
                 <td>${student.DiemLy}</td>
                 <td>${student.DiemHoa}</td>
-                <td></td>
+                <td>
+                    <button class="btn btn-danger">Xoá</button>
+                </td>
                 
             </tr>
         `
