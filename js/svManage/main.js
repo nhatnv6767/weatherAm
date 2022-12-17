@@ -8,7 +8,7 @@ const fetchStudents = () => {
     })
         .then((res) => {
             studentList = res.data;
-
+            renderStudents()
         })
         .catch((err) => {
             console.log(err)
