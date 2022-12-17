@@ -1,15 +1,17 @@
 //
 
+let studentList = []
 const fetchStudents = () => {
     axios({
         url: "https://svcy.myclass.vn/api/SinhVien/LayDanhSachSinhVien",
         method: "GET",
     })
         .then((res) => {
-            console.log(res)
+            studentList = res.data;
+            console.log(studentList)
         })
         .catch((err) => {
-            console.log({...err})
+            console.log(err)
         })
 }
 
