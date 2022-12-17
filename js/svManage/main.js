@@ -8,11 +8,19 @@ const fetchStudents = () => {
     })
         .then((res) => {
             studentList = res.data;
-            console.log(studentList)
+
         })
         .catch((err) => {
             console.log(err)
         })
+}
+
+const renderStudents = () => {
+    // giao dien cua 1 sinh vien
+    // o trong cap the tr
+    for (let student of studentList) {
+        console.log(student)
+    }
 }
 
 fetchStudents()
