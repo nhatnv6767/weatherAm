@@ -30,7 +30,7 @@ const renderStudents = () => {
                 <td>${student.DiemLy}</td>
                 <td>${student.DiemHoa}</td>
                 <td>
-                    <button class="btn btn-danger">Xoá</button>
+                    <button class="btn btn-danger" onclick="deleteStudent('${student.MaSV}')">Xoá</button>
                 </td>
                 
             </tr>
