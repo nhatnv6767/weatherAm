@@ -34,6 +34,10 @@ class MultipleChoice extends Question {
                 answerId = input.value;
             }
         }
+
+        if (!answerId) {
+            return false;
+        }
         // so sanh voi id cua dap an
         for (let answer of this.answers) {
             if (answerId === answer.id) {
@@ -42,6 +46,8 @@ class MultipleChoice extends Question {
                 return answer.exact
             }
         }
+
+        return false;
     }
 }
 
