@@ -5,4 +5,10 @@ class Question {
         this.content = content;
         this.answers = answers;
     }
+
+    checkExact() {
+    }
+
+    render() {
+    }
 }
