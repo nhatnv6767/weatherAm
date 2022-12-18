@@ -20,6 +20,7 @@ class MultipleChoice extends Question {
                 <p class="lead font-italic" style="font-size:30px;">
                     Câu 1: ${this.content}
                 </p>
+                ${answersHTML}
             </div>
         `
     }
