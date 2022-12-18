@@ -14,8 +14,8 @@ const fetchQuestion = async () => {
 
 const renderQuestion = () => {
     let htmlContent = "";
-    for (let item of questionList) {
-        htmlContent += item.render()
+    for (let i in questionList) {
+        htmlContent += questionList[i].render(i + 1)
     }
 
     document.getElementById("questionsContainer").innerHTML = htmlContent;
