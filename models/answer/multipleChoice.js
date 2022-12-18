@@ -9,7 +9,7 @@ class MultipleChoice extends Question {
         for (let item of this.answers) {
             answersHTML += `
                 <div>
-                    <input class="answer-${this.id}" type="radio" name="answer-${this.id}"/>
+                    <input value="${item.id}" class="answer-${this.id}" type="radio" name="answer-${this.id}"/>
                     <label class="lead">${item.content}</label>
                 </div>
             `
@@ -27,9 +27,19 @@ class MultipleChoice extends Question {
 
     checkExact() {
         const inputList = document.getElementsByClassName(`answer-${this.id}`)
+        let answerId;
         for (let input of inputList) {
             if (input.checked) {
-                // so sanh voi id cua dap an
+                // gan id nguoi dung chon vao answerId
+                answerId = input.value;
+            }
+        }
+        // so sanh voi id cua dap an
+        for (let answer of this.answers) {
+            if (answerId === answer.id) {
+                // nếu người dùng chọn vào answer nào thì check để trả về exact của câu hỏi đó,
+                // kết hợp xem với api sẽ rõ
+                return answer.exact
             }
         }
     }
