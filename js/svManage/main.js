@@ -79,7 +79,7 @@ const getStudent = (id) => {
         url: `https://svcy.myclass.vn/api/SinhVien/LayThongTinSinhVien/${id}`,
         method: 'GET',
     }).then((res) => {
-        console.log(res)
+        // console.log(res)
         document.getElementById("btnThem").click()
 
         document.getElementById("id").value = res.data.MaSV;
