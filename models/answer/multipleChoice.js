@@ -36,4 +36,4 @@ const newQuestion = new MultipleChoice(1, 1, "Not at all", [
     ]
 )
 
-console.log(newQuestion.render())
+// console.log(newQuestion.render())

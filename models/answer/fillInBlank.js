@@ -15,7 +15,7 @@ class FillInBlank extends Question {
     }
 }
 
-const newQuestion = new FillInBlank(1, 1, "Not at all", [
+const newQuestion1 = new FillInBlank(1, 1, "Not at all", [
         {content: "Monday"},
         {content: "Monday1"},
         {content: "Monday2"},
@@ -25,4 +25,4 @@ const newQuestion = new FillInBlank(1, 1, "Not at all", [
     ]
 )
 
-console.log(newQuestion.render())
+console.log(newQuestion1.render())
