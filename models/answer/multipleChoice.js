@@ -35,3 +35,5 @@ const newQuestion = new MultipleChoice(1, 1, "Not at all", [
         {content: "Monday5"},
     ]
 )
+
+console.log(newQuestion)
