@@ -26,7 +26,12 @@ class MultipleChoice extends Question {
     }
 
     checkExact() {
-        document.getElementsByClassName(`answer-${this.id}`)
+        const inputList = document.getElementsByClassName(`answer-${this.id}`)
+        for (let input of inputList) {
+            if (input.checked) {
+                // so sanh voi id cua dap an
+            }
+        }
     }
 }
 
