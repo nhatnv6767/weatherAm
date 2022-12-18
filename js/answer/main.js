@@ -21,4 +21,6 @@ const renderQuestion = () => {
     document.getElementById("questionsContainer").innerText = htmlContent;
 }
 
-fetchQuestion()
+fetchQuestion().then(() => {
+    renderQuestion();
+})
