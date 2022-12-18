@@ -97,4 +97,26 @@ const getStudent = (id) => {
     })
 }
 
+const updateStudent = () => {
+    const studentId = document.getElementById("id").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const idCard = document.getElementById("idCard").value;
+    const math = document.getElementById("math").value;
+    const physics = document.getElementById("physics").value;
+    const chemistry = document.getElementById("chemistry").value;
+
+    const updatedStudent = new Student(studentId, name, email, phone, idCard, math, physics, chemistry)
+    axios({
+        url: `https://svcy.myclass.vn/api/SinhVien/CapNhatThongTinSinhVien`,
+        method: "PUT",
+        data: updatedStudent,
+    }).then((res) => {
+        fetchStudents()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
 fetchStudents()
