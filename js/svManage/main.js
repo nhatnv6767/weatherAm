@@ -82,14 +82,14 @@ const getStudent = (id) => {
         console.log(res)
         document.getElementById("btnThem").click()
 
-        document.getElementById("id").value;
-        document.getElementById("name").value;
-        document.getElementById("email").value;
-        document.getElementById("phone").value;
-        document.getElementById("idCard").value;
-        document.getElementById("math").value;
-        document.getElementById("physics").value;
-        document.getElementById("chemistry").value;
+        document.getElementById("id").value = res.data.MaSV;
+        document.getElementById("name").value = res.data.HoTen;
+        document.getElementById("email").value = res.data.Email;
+        document.getElementById("phone").value = res.data.SoDT;
+        document.getElementById("idCard").value = res.data.CMND;
+        document.getElementById("math").value = res.data.DiemToan;
+        document.getElementById("physics").value = res.data.DiemLy;
+        document.getElementById("chemistry").value = res.data.DiemHoa;
     }).catch((err) => {
         console.log(err)
     })
