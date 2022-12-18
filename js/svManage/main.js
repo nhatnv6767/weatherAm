@@ -31,7 +31,7 @@ const renderStudents = () => {
                 <td>${student.DiemHoa}</td>
                 <td>
                     <button class="btn btn-danger" onclick="deleteStudent('${student.MaSV}')">Xoá</button>
-                    <button class="btn btn-info" onclick="">Cập nhật</button>
+                    <button class="btn btn-info" onclick="getStudent('${student.MaSV}')">Cập nhật</button>
                 </td>
                 
             </tr>
@@ -79,7 +79,7 @@ const getStudent = (id) => {
         url: `https://svcy.myclass.vn/api/SinhVien/LayThongTinSinhVien/${id}`,
         method: 'GET',
     }).then((res) => {
-        console.log(res)
+        document.getElementById("btnThem").click()
     }).catch((err) => {
         console.log(err)
     })
