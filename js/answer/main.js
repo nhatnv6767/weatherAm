@@ -18,7 +18,7 @@ const renderQuestion = () => {
         htmlContent += item.render()
     }
 
-    document.getElementById("questionsContainer").innerText = htmlContent;
+    document.getElementById("questionsContainer").innerHTML = htmlContent;
 }
 // mac dinh khong truyen vao thi la mang []
 const mapData = (data = []) => {
