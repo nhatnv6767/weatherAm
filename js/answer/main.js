@@ -6,7 +6,7 @@ const fetchQuestion = async () => {
             method: "GET",
         })
 
-        questionList = res.data
+
     } catch (e) {
         console.log(e)
     }
@@ -19,6 +19,16 @@ const renderQuestion = () => {
     }
 
     document.getElementById("questionsContainer").innerText = htmlContent;
+}
+// mac dinh khong truyen vao thi la mang []
+const mapData = (data = []) => {
+    data.map((item, index) => {
+        if (item.questionType === 1) {
+            return new MultipleChoice(item.questionType, item.id, item.content, item.answers)
+        } else {
+            return new FillInBlank(item.questionType, item.id, item.content, item.answers)
+        }
+    })
 }
 
 fetchQuestion().then(() => {
