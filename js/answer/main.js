@@ -22,7 +22,7 @@ const renderQuestion = () => {
 }
 // mac dinh khong truyen vao thi la mang []
 const mapData = (data = []) => {
-    data.map((item, index) => {
+    questionList = data.map((item, index) => {
         const {questionType, id, content, answers} = item
         if (item.questionType === 1) {
             return new MultipleChoice(questionType, id, content, answers)
