@@ -90,6 +90,8 @@ const getStudent = (id) => {
         document.getElementById("math").value = res.data.DiemToan;
         document.getElementById("physics").value = res.data.DiemLy;
         document.getElementById("chemistry").value = res.data.DiemHoa;
+
+        document.getElementById("id").setAttribute("disabled", true)
     }).catch((err) => {
         console.log(err)
     })
