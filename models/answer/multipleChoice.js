@@ -9,7 +9,7 @@ class MultipleChoice extends Question {
         for (let item of this.answers) {
             answersHTML += `
                 <div>
-                    <input type="radio" name="answer-${this.id}"/>
+                    <input class="answer-${this.id}" type="radio" name="answer-${this.id}"/>
                     <label class="lead">${item.content}</label>
                 </div>
             `
@@ -23,6 +23,10 @@ class MultipleChoice extends Question {
                 ${answersHTML}
             </div>
         `
+    }
+
+    checkExact() {
+        document.getElementsByClassName(`answer-${this.id}`)
     }
 }
 
