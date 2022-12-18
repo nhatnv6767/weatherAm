@@ -25,4 +25,4 @@ const newQuestion1 = new FillInBlank(1, 1, "Not at all", [
     ]
 )
 
-console.log(newQuestion1.render())
+// console.log(newQuestion1.render())
