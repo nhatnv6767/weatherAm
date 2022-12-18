@@ -6,8 +6,8 @@ class MultipleChoice extends Question {
     render() {
         return `
             <div>
-                <p>
-                    Some kind of question
+                <p class="lead font-italic" style="font-size:30px;">
+                    Câu 1: ${this.content}
                 </p>
             </div>
         `
