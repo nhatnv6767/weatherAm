@@ -25,3 +25,13 @@ class MultipleChoice extends Question {
         `
     }
 }
+
+const newQuestion = new MultipleChoice(1, 1, "Not at all", [
+        {content: "Monday"},
+        {content: "Monday1"},
+        {content: "Monday2"},
+        {content: "Monday3"},
+        {content: "Monday4"},
+        {content: "Monday5"},
+    ]
+)
