@@ -3,11 +3,11 @@ class FillInBlank extends Question {
         super(type, id, content, answers);
     }
 
-    render() {
+    render(index) {
         return `
             <div>
                 <p class="lead font-italic" style="font-size:30px;">
-                    Câu 1: ${this.content}                     
+                    Câu ${index}: ${this.content}                     
                 </p>
                 <input type="text" class="form-control w-50"/>
             </div>

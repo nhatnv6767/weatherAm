@@ -3,7 +3,7 @@ class MultipleChoice extends Question {
         super(type, id, content, answers);
     }
 
-    render() {
+    render(index) {
 
         let answersHTML = ''
         for (let item of this.answers) {
@@ -18,7 +18,7 @@ class MultipleChoice extends Question {
         return `
             <div>
                 <p class="lead font-italic" style="font-size:30px;">
-                    Câu 1: ${this.content}
+                    Câu ${index}: ${this.content}
                 </p>
                 ${answersHTML}
             </div>
