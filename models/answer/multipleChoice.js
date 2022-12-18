@@ -9,7 +9,7 @@ class MultipleChoice extends Question {
         for (let item of this.answers) {
             answersHTML += `
                 <div>
-                    <input/>
+                    <input type="radio"/>
                     <label class="lead">${item.content}</label>
                 </div>
             `
@@ -36,4 +36,4 @@ const newQuestion = new MultipleChoice(1, 1, "Not at all", [
     ]
 )
 
-console.log(newQuestion)
+console.log(newQuestion.render())
