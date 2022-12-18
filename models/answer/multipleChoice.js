@@ -9,7 +9,7 @@ class MultipleChoice extends Question {
         for (let item of this.answers) {
             answersHTML += `
                 <div>
-                    <input type="radio"/>
+                    <input type="radio" name="answer"/>
                     <label class="lead">${item.content}</label>
                 </div>
             `
