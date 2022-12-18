@@ -4,6 +4,17 @@ class MultipleChoice extends Question {
     }
 
     render() {
+
+        let answersHTML = ''
+        for (let item of this.answers) {
+            answersHTML += `
+                <div>
+                    <input/>
+                    <label class="lead">${item.content}</label>
+                </div>
+            `
+        }
+
         return `
             <div>
                 <p class="lead font-italic" style="font-size:30px;">
