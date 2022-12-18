@@ -79,7 +79,17 @@ const getStudent = (id) => {
         url: `https://svcy.myclass.vn/api/SinhVien/LayThongTinSinhVien/${id}`,
         method: 'GET',
     }).then((res) => {
+        console.log(res)
         document.getElementById("btnThem").click()
+
+        document.getElementById("id").value;
+        document.getElementById("name").value;
+        document.getElementById("email").value;
+        document.getElementById("phone").value;
+        document.getElementById("idCard").value;
+        document.getElementById("math").value;
+        document.getElementById("physics").value;
+        document.getElementById("chemistry").value;
     }).catch((err) => {
         console.log(err)
     })
