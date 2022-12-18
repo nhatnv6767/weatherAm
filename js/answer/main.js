@@ -5,7 +5,7 @@ const fetchQuestion = async () => {
             url: "https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/questions",
             method: "GET",
         })
-
+        return res.data;
 
     } catch (e) {
         console.log(e)
@@ -32,7 +32,7 @@ const mapData = (data = []) => {
     })
 }
 
-fetchQuestion().then(() => {
-    mapData()
+fetchQuestion().then((data) => {
+    mapData(data)
     renderQuestion();
 })
