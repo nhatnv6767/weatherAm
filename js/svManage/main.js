@@ -113,6 +113,12 @@ const updateStudent = () => {
         method: "PUT",
         data: updatedStudent,
     }).then((res) => {
+        // clear form
+        document.getElementById("btnReset").click()
+        // hide popup
+        document.getElementById("btnClose").click()
+        // unlock input id
+        document.getElementById("id").removeAttribute("disabled")
         fetchStudents()
     }).catch((err) => {
         console.log(err)
