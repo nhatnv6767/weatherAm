@@ -9,10 +9,16 @@ class FillInBlank extends Question {
                 <p class="lead font-italic" style="font-size:30px;">
                     Câu ${index}: ${this.content}                     
                 </p>
-                <input type="text" class="form-control w-50"/>
+                <input id="answer-${this.id}" type="text" class="form-control w-50"/>
             </div>
         `
     }
+
+    checkExact() {
+        let value = document.getElementById(`answer-${this.id}`).value.toLowerCase();
+        return value === this.answers[0].content.toLowerCase()
+    }
+
 }
 
 const newQuestion1 = new FillInBlank(1, 1, "Not at all", [
