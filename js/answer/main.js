@@ -33,6 +33,17 @@ const mapData = (data = []) => {
     })
 }
 
+const submit = () => {
+    let result = 0;
+    for (let item of questionList) {
+        if (item.checkExact()) {
+            result++;
+        }
+    }
+
+    alert("Kết quả: " + result + "/" + questionList.length)
+}
+
 fetchQuestion().then((data) => {
     mapData(data)
     renderQuestion();
