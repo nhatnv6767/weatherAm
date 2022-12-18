@@ -33,5 +33,6 @@ const mapData = (data = []) => {
 }
 
 fetchQuestion().then(() => {
+    mapData()
     renderQuestion();
 })
